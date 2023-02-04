@@ -32,25 +32,49 @@ def send_mail(recipient: str, sender: str, subject: str, body: str) -> bool:
     pprint.pprint(response.json())
 
 def get_inbox(recipient: str) -> None:
-    """TODO: fill out this docstring (using the send_mail docstring as a guide)
+    """
+    Receives an inbox from the server by making a GET request to the /mail/inbox/{recipient} endpoint.
+
+    Args:
+        recipient (str): The name of the recipient whose inbox will be received from the server
+
+    Returns: Nothing
     """
     response = requests.get(f'{SERVER}/mail/inbox/{recipient}')
     pprint.pprint(response.json())
 
 def get_sent(sender: str) -> None:
-    """TODO: fill out this docstring (using the send_mail docstring as a guide)
+    """
+    Receives a sender's sent mail from the server by making a GET request to the /mail/inbox/{recipient} endpoint.
+
+    Args:
+        sender (str): The name of the sender whose sent mail will be received from the server
+
+    Returns: Nothing
     """
     response = requests.get(f'{SERVER}/mail/sent/{sender}')
     pprint.pprint(response.json())
 
 def get_mail(mail_id: str) -> None:
-    """TODO: fill out this docstring (using the send_mail docstring as a guide)
+    """
+    Receives a specific mail entry from the server by making a GET request to the /mail/{mail_id} endpoint.
+
+    Args:
+        mail_id (str): The ID of the mail entry to be received from the server
+
+    Returns: Nothing
     """
     response = requests.get(f'{SERVER}/mail/{mail_id}')
     pprint.pprint(response.json())
 
 def delete_mail(mail_id: str) -> None:
-    """TODO: fill out this docstring (using the send_mail docstring as a guide)
+    """
+    Deletes a specific mail entry from the server by making a DELETE request to the /mail/{mail_id} endpoint.
+
+    Args:
+        mail_id (str): The ID of the mail entry to be deleted from the server
+
+    Returns: Nothing
     """
     response = requests.delete(f'{SERVER}/mail/{mail_id}')
     pprint.pprint(response.json())
@@ -111,7 +135,6 @@ def main():
     elif args.command == 'delete':
         delete_mail(args.mail_id)
 
-# TODO: run the code!
 # to run the code, open a terminal and type:
 #   python mail_client.py --help
 # For example, to send a mail, type:
