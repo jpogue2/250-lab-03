@@ -12,7 +12,7 @@ Answer for Question 1:
 
 RESTful APIs are scalable because of specific architecture requirements that can expedite or even eliminate some client-server interactions.
 All RESTful APIs, by definition, must be stateless and cacheable. In calling RESTful APIs "stateless", we are saying that each client-server
-interaction is dependent of the others (a client-server interaction never transitions the API to a different state). This is helpful for 
+interaction is independent of the others (a client-server interaction never transitions the API to a different state). This is helpful for 
 scaleability because stateless APIs don't have to store the outcomes/results of prior interactions, resulting in a lower load. In calling
 RESTful APIs "cacheable", we are saying that frequently-referenced information can be stored on the client (or some intermediary
 close to the client) rather than the server. This is helpful for scaleability because, for frequently-referenced information, cacheable APIs
@@ -28,7 +28,7 @@ subject of each of their received emails.
 Answer for Question 3:
 
 Our mail server doesn't use the PUT method, which is used to update the resources currently held on the server. This method could potentially be used
-for edit functionality, where a user could edit the content of their email after sending it. It could also allow for a primitive version of "forwarding",
+for edit functionality, where a user could edit the content of their email after "sending" it. It could also allow for a primitive version of "forwarding",
 where the user could edit the "recipients" list of an email to include an additional recipient. 
 
 Answer for Question 4:
